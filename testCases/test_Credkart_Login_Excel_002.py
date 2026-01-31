@@ -1,13 +1,8 @@
-
+import allure
 import pytest
-from faker import Faker
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
 
 from pageObjects.Login_Page import Login_Page_Class
-from pageObjects.Registration_Page import Registration_Page_Class
+
 from utilities.Logger import log_generator_class
 from utilities.ReadProperties import ReadConfigClass
 from utilities.XLUtils import Excel_methods
@@ -24,6 +19,14 @@ class Test_User_Profile :
     excel_path = ".\\Test_Data\\Credkart_Test_Data.xlsx"
     sheet_name = "login_data"
 
+
+    @allure.title("test_Credkart_login_excel_ddt_004")
+    @allure.severity(allure.severity_level.CRITICAL)
+    @allure.epic("Epic: Userprofile: user login DDT")
+    @allure.description("This testcases is to validate CredKart website user login")
+    @allure.link(login_url)
+    @allure.issue("user login")
+    @allure.story("CredKart : User login")
     @pytest.mark.smoke
     @pytest.mark.flaky(reruns = 1, rerun_delay = 1)
     #@pytest.mark.dependency(depends=["test_verify_Credkart_url_001"])
@@ -53,6 +56,9 @@ class Test_User_Profile :
             if self.lp.verify_menu_button_visibility() == "pass" :
                 self.log.info(f"User login successful and taking screenshot")
                 self.driver.save_screenshot(f".\\Screenshots\\User Login Successful_{self.email}.png")
+                allure.attach.file(f".\\Screenshots\\User Login Successful_{self.email}.png",
+                                   attachment_type=allure.attachment_type.PNG
+                                   )
                 self.log.info(f"Clicking on menu button")
                 self.lp.Click_Menu_button()
                 self.log.info(f"Clicking on logout button")
@@ -62,6 +68,9 @@ class Test_User_Profile :
             else:
                 self.log.info(f"User login fail and taking screenshot")
                 self.driver.save_screenshot(f".\\Screenshots\\User Login Fail_{self.email}.png")
+                allure.attach.file(f".\\Screenshots\\User Login Fail_{self.email}.png",
+                                   attachment_type=allure.attachment_type.PNG
+                                   )
                 actual_result = "login_fail"
                 Excel_methods.write_data_from_excel(self.excel_path, self.sheet_name, i, 5, actual_result)
 

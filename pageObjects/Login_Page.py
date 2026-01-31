@@ -12,8 +12,10 @@ class Login_Page_Class:
 
     def __init__(self, driver):
         self.driver = driver
+        self.wait = WebDriverWait(self.driver, 5, 0.25)
 
     def Enter_Email(self, email):
+        self.wait.until(expected_conditions.visibility_of_element_located((By.ID, self.text_email_id)))
         self.driver.find_element(By.ID, self.text_email_id).send_keys(email)
 
     def Enter_Password(self, password):
@@ -30,8 +32,8 @@ class Login_Page_Class:
 
     def verify_menu_button_visibility(self):
         try:
-            wait = WebDriverWait(self.driver, 5)
-            wait.until(expected_conditions.visibility_of_element_located((By.XPATH,  self.click_menu_button_Xpath)))
+
+            self.wait.until(expected_conditions.visibility_of_element_located((By.XPATH,  self.click_menu_button_Xpath)))
             self.driver.find_element(By.XPATH, self.click_menu_button_Xpath)
             return "pass"
         except:

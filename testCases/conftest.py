@@ -76,16 +76,16 @@ def browser_setup(request): # function
 # Password save browser message --> done
 # Browser handle thr Remote desktop
 #
-#Test Data
-@pytest.fixture(params = [
-    ("Credencetest@test.com", "Credence@123", "login_pass"), # All correct #
-    ("Credencetest@test.com11", "Credence@123", "login_fail"), # username wrong #
-    ("Credencetest@test.com", "Credence@1231", "login_fail"), # password wrong
-    ("Credencetest@test.com1", "Credence@1231", "login_fail")  # username and password wrong
-
-])
-def credkart_login_data(request):
-    return request.param
+# #Test Data
+# @pytest.fixture(params = [
+#     ("Credencetest@test.com", "Credence@123", "login_pass"), # All correct #
+#     ("Credencetest@test.com11", "Credence@123", "login_fail"), # username wrong #
+#     ("Credencetest@test.com", "Credence@1231", "login_fail"), # password wrong
+#     ("Credencetest@test.com1", "Credence@1231", "login_fail")  # username and password wrong
+#
+# ])
+# def credkart_login_data(request):
+#     return request.param
 
 
 def pytest_metadata(metadata):

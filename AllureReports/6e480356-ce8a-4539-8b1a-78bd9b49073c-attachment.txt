@@ -1,0 +1,6 @@
+[32mINFO    [0m root:test_Credkart_User_Profile_001.py:51 Testcase test_verify_Credkart_url_001 is started
+[32mINFO    [0m root:test_Credkart_User_Profile_001.py:53 Opening browser and getting https://automation.credence.in/login
+[32mINFO    [0m root:test_Credkart_User_Profile_001.py:54 Checking driver title
+[32mINFO    [0m root:test_Credkart_User_Profile_001.py:56 Testcase test_verify_Credkart_url_001 is passed
+[32mINFO    [0m root:test_Credkart_User_Profile_001.py:57 Taking screenshot
+[32mINFO    [0m root:test_Credkart_User_Profile_001.py:68 Testcase test_verify_Credkart_url_001 is completed

@@ -16,24 +16,11 @@ class log_generator_class: # created the class to generate and return logger obj
 
 """
 log level : 
-pytest doent have logs as like selenium...it has levels.....of python...coz pytest code is written in python
-debug--debugging...checking the code
-info----for general information about code...whats going on in test case....steps info..
-warning---some unexpected issues but programm runs...browser warnings
-error---- wrong code due to which code stops....element not found..failed assertions...browser crash..
-critical----system crash,Selenium server not reachable.......user not able to login...very basic functionality not workig...
 
-
-"""
-
-"""
-log types:
-1.Driver logs: logs from driver itself..i.e.driver not able to find or locate web element..
-2.browser logs: captures logs from the browser console..i.e javascript error and warnnings
-3.client logs: logs from the client side...ypir test script....api request made by your testcode to webdriver
-4.server logs: logs from server side issues
-5.performance logs:browser performance...time taken for.page load time...network requestsetc...
-
-
+debug
+info
+warning
+error
+critical
 
 """

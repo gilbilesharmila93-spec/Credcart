@@ -1,8 +1,0 @@
-welcome to credence 
-we are learning automation
-THis is edited file...
-
-we are also learning API and ETL automation.
-
-This is edited at global git
-We are starting new batch ffrom 14th february 2026.
